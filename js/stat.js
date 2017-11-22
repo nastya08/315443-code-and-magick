@@ -1,6 +1,6 @@
 'use strict';
 
-window.renderStatistics = function(ctx, names, times) {
+window.renderStatistics = function (ctx, names, times) {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
   ctx.strokeRect(110, 20, 420, 270);
   ctx.fillRect(110, 20, 420, 270);
@@ -15,15 +15,13 @@ window.renderStatistics = function(ctx, names, times) {
   ctx.fillText('Ура вы победили!', 120, 40);
   ctx.fillText('Список результатов:', 120, 60);
 
-  var getMaxElement = function() {
+  var getMaxElement = function () {
     var max = -1;
-    var maxIndex = -1;
 
-    for (var i = 0 ; i < times.length; i++) {
+    for (var i = 0; i < times.length; i++) {
       var time = times[i];
       if (time > max) {
         max = time;
-        maxIndex = i;
       }
     }
     return max;
@@ -32,11 +30,11 @@ window.renderStatistics = function(ctx, names, times) {
   var histogramHeight = 150; // px;
   var step = histogramHeight / (getMaxElement() - 0); // px;
   var barWidth = 40; // px;
-  var indent = 90;    // px;
+  var indent = 90; // px;
   var initialX = 155; // px;
-  var initialY = 100;  // px;
-  var initialTimesY = 90; //px;
-  var lineHeight = 20;// px;
+  var initialY = 100; // px;
+  var initialTimesY = 90; // px;
+  var lineHeight = 20; // px;
 
   var getRandomValue = function (minValue, maxValue) {
     return Math.random() * (maxValue - minValue) + minValue;
